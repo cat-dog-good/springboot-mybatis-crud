@@ -14,10 +14,34 @@ class SpringbootMybatisCrudApplicationTests {
     @Autowired
     private EmpMapper empMapper;
 
-//    @Test
-//    public void testListUser(){
-//        List<emp> list = empMapper.list();
-//        list.stream().forEach(user -> System.out.println(user));
-//    }
+    @Test
+    public void testDelete(){
+        int number = empMapper.delete(11);//返回值为删除记录的条数
+        System.out.println("成功删除记录数量:"+number);
+    }
+
+    @Test
+    public void testInsert(){
+        emp emp =new emp();
+        emp.setId(11);
+        emp.setWorkNo("1111");
+        empMapper.insert(emp);
+        System.out.println(emp.getId());
+    }
+
+    @Test
+    public void testUpdate(){
+        emp emp =new emp();
+        emp.setId(10);
+        emp.setName("zhangsan");
+        empMapper.update(emp);
+    }
+
+    @Test
+    public void testGetById(){
+        emp emp = empMapper.getById(5);
+        System.out.println(emp);
+
+    }
 
 }
