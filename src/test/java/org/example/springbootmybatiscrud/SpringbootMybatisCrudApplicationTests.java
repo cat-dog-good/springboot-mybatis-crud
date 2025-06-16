@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Arrays;
 import java.util.List;
 
 @SpringBootTest//springboot整合单元测试的注解
@@ -18,6 +19,12 @@ class SpringbootMybatisCrudApplicationTests {
     public void testDelete(){
         int number = empMapper.delete(11);//返回值为删除记录的条数
         System.out.println("成功删除记录数量:"+number);
+    }
+
+    @Test
+    public void testDeleteByIds(){
+        List<Integer> ids = Arrays.asList(8, 10, 11);
+        empMapper.deleteByIds(ids);
     }
 
     @Test

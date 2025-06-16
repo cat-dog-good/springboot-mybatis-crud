@@ -12,6 +12,9 @@ public interface EmpMapper {
     @Delete("delete from emp where id = #{id}")//sql占位符
     public int delete(Integer id);
 
+    //根据id批量删除员工信息
+    public int deleteByIds(List<Integer> ids);
+
     //新增员工
     @Insert("insert into emp(id,workNo,name,gender,age,idCard)" +
             "values (#{id},#{workNo},#{name},#{gender},#{age},#{idCard})")
