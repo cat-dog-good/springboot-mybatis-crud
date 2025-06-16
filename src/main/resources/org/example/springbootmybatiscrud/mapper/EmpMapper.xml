@@ -11,8 +11,14 @@
     <select id="select" resultType="org.example.springbootmybatiscrud.POJO.emp">
         select *
         from emp
-        where gender = #{gender}
-          and age > #{age}
-          and name like '___'
+        <where>
+        <if test="gender != null">
+            gender = #{gender}
+        </if>
+        <if test="age != null">
+            and age > #{age}
+        </if>
+        </where>
+
     </select>
 </mapper>
