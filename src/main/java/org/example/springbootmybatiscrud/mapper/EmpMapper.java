@@ -19,9 +19,7 @@ public interface EmpMapper {
     @Options(useGeneratedKeys = true,keyProperty = "id")
     public void insert(emp emp);
 
-    //更新员工
-    @Update("update emp set id=#{id},workNo=#{workNo},name=#{name},\n" +
-            "               gender=#{gender},age=#{age},idCard=#{idCard} where id=#{id}")
+    //动态更新员工
     public void update(emp emp);
 
     //根据id查询员工(xml映射文件)

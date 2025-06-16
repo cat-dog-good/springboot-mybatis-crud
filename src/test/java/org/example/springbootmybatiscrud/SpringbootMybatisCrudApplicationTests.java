@@ -32,7 +32,7 @@ class SpringbootMybatisCrudApplicationTests {
     @Test
     public void testUpdate(){
         emp emp =new emp();
-        emp.setId(10);
+        emp.setId(9);
         emp.setName("zhangsan");
         empMapper.update(emp);
     }
