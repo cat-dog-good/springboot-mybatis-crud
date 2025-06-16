@@ -24,7 +24,6 @@ public interface EmpMapper {
             "               gender=#{gender},age=#{age},idCard=#{idCard} where id=#{id}")
     public void update(emp emp);
 
-    //根据id查询员工
-    @Select("select * from emp where id=#{id}")
+    //根据id查询员工(xml映射文件)
     public emp getById(Integer id);
 }
