@@ -4,15 +4,19 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.example.springbootmybatiscrud.mapper.EmpMapper">
 
+    <sql id="commonSelect">
+        select * from emp
+    </sql>
+
 <!--    resultType:单条数据返回的类型-->
     <select id="getById" resultType="org.example.springbootmybatiscrud.POJO.emp">
-        select * from emp where id=#{id}
+        <include refid="commonSelect"/>
+        where id=#{id}
     </select>
 
 
     <select id="select" resultType="org.example.springbootmybatiscrud.POJO.emp">
-        select *
-        from emp
+        <include refid="commonSelect"/>
         <where>
         <if test="gender != null">
             gender = #{gender}
