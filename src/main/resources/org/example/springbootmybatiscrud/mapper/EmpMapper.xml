@@ -7,4 +7,12 @@
     <select id="getById" resultType="org.example.springbootmybatiscrud.POJO.emp">
         select * from emp where id=#{id}
     </select>
+
+    <select id="select" resultType="org.example.springbootmybatiscrud.POJO.emp">
+        select *
+        from emp
+        where gender = #{gender}
+          and age > #{age}
+          and name like '___'
+    </select>
 </mapper>

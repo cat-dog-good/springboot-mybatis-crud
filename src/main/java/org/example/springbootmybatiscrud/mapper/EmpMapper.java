@@ -26,4 +26,7 @@ public interface EmpMapper {
 
     //根据id查询员工(xml映射文件)
     public emp getById(Integer id);
+
+    //多条件查询(xml映射文件)
+    public List<emp> select(String gender,Integer age);
 }

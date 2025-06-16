@@ -41,7 +41,12 @@ class SpringbootMybatisCrudApplicationTests {
     public void testGetById(){
         emp emp = empMapper.getById(5);
         System.out.println(emp);
+    }
 
+    @Test
+    public void testSelect(){
+        List<emp> list = empMapper.select("男", 18);
+        list.forEach(System.out::println);
     }
 
 }
